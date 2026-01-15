@@ -7,7 +7,7 @@
     <meta name="description"
         content="Learn about PowerFit Gym - Our story, mission, and the dedicated team behind your fitness success.">
     <title>About Us | PowerFit Gym</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -17,16 +17,16 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="{{ url_for('home') }}" class="logo">
                 <i class="fa-solid fa-dumbbell logo-icon"></i>
                 <span class="logo-text">PowerFit</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link active">About Us</a></li>
-                <li><a href="membership.html" class="nav-link">Membership</a></li>
+                <li><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link active">About Us</a></li>
+                <li><a href="{{ url_for('membership') }}" class="nav-link">Membership</a></li>
             </ul>
-            <a href="membership.html" class="btn btn-primary">Join Now</a>
+            <a href="{{ url_for('membership') }}" class="btn btn-primary">Join Now</a>
         </div>
     </nav>
 
@@ -194,7 +194,7 @@
             <div class="cta-content">
                 <h2>Become Part of Our Story</h2>
                 <p>Join the PowerFit family and start writing your own success story today.</p>
-                <a href="membership.html" class="btn btn-primary btn-large">View Membership Plans</a>
+                <a href="{{ url_for('membership') }}" class="btn btn-primary btn-large">View Membership Plans</a>
             </div>
         </div>
     </section>
@@ -204,7 +204,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">
+                    <a href="{{ url_for('home') }}" class="logo">
                         <i class="fa-solid fa-dumbbell logo-icon"></i>
                         <span class="logo-text">PowerFit</span>
                     </a>
@@ -213,9 +213,9 @@
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('membership') }}">Membership</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">

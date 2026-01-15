@@ -7,7 +7,7 @@
     <meta name="description"
         content="PowerFit Gym Membership Plans - Choose the perfect plan for your fitness journey.">
     <title>Membership Plans | PowerFit Gym</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -16,14 +16,14 @@
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo"><i class="fa-solid fa-dumbbell logo-icon"></i><span
+            <a href="{{ url_for('home') }}" class="logo"><i class="fa-solid fa-dumbbell logo-icon"></i><span
                     class="logo-text">PowerFit</span></a>
             <ul class="nav-links">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About Us</a></li>
-                <li><a href="membership.html" class="nav-link active">Membership</a></li>
+                <li><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="nav-link">About Us</a></li>
+                <li><a href="{{ url_for('membership') }}" class="nav-link active">Membership</a></li>
             </ul>
-            <a href="membership.html" class="btn btn-primary">Join Now</a>
+            <a href="{{ url_for('membership') }}" class="btn btn-primary">Join Now</a>
         </div>
     </nav>
 
@@ -191,7 +191,7 @@
                     </div>
                 </div>
                 <div class="contact-form-wrapper">
-                    <form class="contact-form">
+                    <form class="contact-form" method="POST" action="{{ url_for('membership') }}">
                         <div class="form-group"><label for="name">Full Name</label><input type="text" id="name"
                                 name="name" placeholder="John Doe" required></div>
                         <div class="form-group"><label for="email">Email</label><input type="email" id="email"
@@ -214,16 +214,16 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand"><a href="index.html" class="logo"><i
+                <div class="footer-brand"><a href="{{ url_for('home') }}" class="logo"><i
                             class="fa-solid fa-dumbbell logo-icon"></i><span class="logo-text">PowerFit</span></a>
                     <p>Transforming lives through fitness since 2010.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('membership') }}">Membership</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
